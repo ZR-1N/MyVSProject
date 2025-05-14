@@ -1,0 +1,32 @@
+﻿  Animation.cpp
+  Enemy.cpp
+  Game.cpp
+D:\mygame\Sasuke\Game.cpp(304,75): warning C4244: “参数”: 从“T”转换到“T”，可能丢失数据
+D:\mygame\Sasuke\Game.cpp(304,75): warning C4244:         with
+D:\mygame\Sasuke\Game.cpp(304,75): warning C4244:         [
+D:\mygame\Sasuke\Game.cpp(304,75): warning C4244:             T=unsigned int
+D:\mygame\Sasuke\Game.cpp(304,75): warning C4244:         ]
+D:\mygame\Sasuke\Game.cpp(304,75): warning C4244:         and
+D:\mygame\Sasuke\Game.cpp(304,75): warning C4244:         [
+D:\mygame\Sasuke\Game.cpp(304,75): warning C4244:             T=float
+D:\mygame\Sasuke\Game.cpp(304,75): warning C4244:         ]
+D:\mygame\Sasuke\Game.cpp(304,55): warning C4244: “参数”: 从“T”转换到“T”，可能丢失数据
+D:\mygame\Sasuke\Game.cpp(304,55): warning C4244:         with
+D:\mygame\Sasuke\Game.cpp(304,55): warning C4244:         [
+D:\mygame\Sasuke\Game.cpp(304,55): warning C4244:             T=unsigned int
+D:\mygame\Sasuke\Game.cpp(304,55): warning C4244:         ]
+D:\mygame\Sasuke\Game.cpp(304,55): warning C4244:         and
+D:\mygame\Sasuke\Game.cpp(304,55): warning C4244:         [
+D:\mygame\Sasuke\Game.cpp(304,55): warning C4244:             T=float
+D:\mygame\Sasuke\Game.cpp(304,55): warning C4244:         ]
+  Main.cpp
+  Map.cpp
+D:\mygame\Sasuke\Map.cpp(45,40): warning C4267: “参数”: 从“size_t”转换到“unsigned int”，可能丢失数据
+D:\mygame\Sasuke\Map.cpp(45,37): warning C4267: “参数”: 从“size_t”转换到“unsigned int”，可能丢失数据
+D:\mygame\Sasuke\Map.cpp(96,25): warning C4267: “=”: 从“size_t”转换到“int”，可能丢失数据
+D:\mygame\Sasuke\Map.cpp(97,25): warning C4267: “=”: 从“size_t”转换到“int”，可能丢失数据
+  Sasuke.cpp
+D:\mygame\Sasuke\Sasuke.cpp(285,17): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+D:\mygame\Sasuke\Sasuke.cpp(286,17): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+  正在生成代码...
+  Mario.vcxproj -> D:\mygame\Sasuke\x64\Debug\Sasuke.exe
