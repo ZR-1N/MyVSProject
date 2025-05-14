@@ -45,7 +45,6 @@
     <ClInclude Include="Resources.h" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="block.png" />
     <Image Include="map.png" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

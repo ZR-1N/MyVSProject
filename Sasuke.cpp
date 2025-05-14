@@ -57,21 +57,21 @@ void Sasuke::Begin()
     // 定义站立动画
     stanceAnimation = Animation(0.8f,
         {
-            AnimFrame(0.00f, Resources::textures["stance_1.png"]),  
-            AnimFrame(0.25f, Resources::textures["stance_2.png"]), 
+            AnimFrame(0.00f, Resources::textures["stance_1.png"]),
+            AnimFrame(0.25f, Resources::textures["stance_2.png"]),
             AnimFrame(0.50f, Resources::textures["stance_3.png"]),
             AnimFrame(0.75f, Resources::textures["stance_4.png"]),
-           
-          
-            
+
+
+
         });
 
     // 定义跳跃动画
-    jumpAnimation = Animation(1.5f, 
+    jumpAnimation = Animation(1.5f,
         {
-            AnimFrame(0.00f, Resources::textures["jump_1.png"]), 
-            AnimFrame(0.50f, Resources::textures["jump_2.png"]), 
-            AnimFrame(1.00f, Resources::textures["jump_3.png"]), 
+            AnimFrame(0.00f, Resources::textures["jump_1.png"]),
+            AnimFrame(0.50f, Resources::textures["jump_2.png"]),
+            AnimFrame(1.00f, Resources::textures["jump_3.png"]),
         });
 
     jumpSound.setBuffer(Resources::sounds["jump.wav"]);
@@ -79,9 +79,9 @@ void Sasuke::Begin()
     jumpSound.setVolume(20);
     tianzhaoSound.setBuffer(Resources::sounds["tianzhao.mp3"]);
     tianzhaoSound.setVolume(30);
-	aoyiSound.setBuffer(Resources::sounds["aoyi.mp3"]);
+    aoyiSound.setBuffer(Resources::sounds["aoyi.mp3"]);
     aoyiSound.setVolume(40);
-	danshiSound.setBuffer(Resources::sounds["danshi.wav"]);
+    danshiSound.setBuffer(Resources::sounds["danshi.wav"]);
     danshiSound.setVolume(40);
 
     fixtureData.listener = this;
@@ -141,10 +141,10 @@ void Sasuke::Update(float deltaTime)
 
     b2Vec2 velocity = body->GetLinearVelocity();
     velocity.x = 0.0f;
-    // —— 更新攻击冷却 —— 
+    //  更新攻击冷却  
     timeSinceLastAtk += deltaTime;
     timeSinceLastTianzhao += deltaTime;  // 天照冷却计时
-    // —— 检测攻击按键 —— 
+    //  检测攻击按键  
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::J)
         && timeSinceLastAtk >= attackCooldown)
     {
@@ -169,13 +169,13 @@ void Sasuke::Update(float deltaTime)
             }
         }
     }
-    // —— 天照攻击（K键，新增逻辑） —— 
+    // 天照攻击（K键）
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::K) && timeSinceLastTianzhao >= tianzhaoCooldown)
     {
         timeSinceLastTianzhao = 0.0f;
         tianzhaoActive = true;// 激活天照动画
         tianzhaoTime = 0.0f;// 重置播放时间
-		tianzhaoSound.play();// 播放音效
+        tianzhaoSound.play();// 播放音效
         // 计算前方第8格位置
         float direction = facingLeft ? -1.0f : 1.0f;
         tianzhaoPosition = position + sf::Vector2f(direction * 8.0f, -0.5f);
@@ -287,15 +287,15 @@ void Sasuke::Draw(Renderer& renderer)
     renderer.Draw(textureToDraw, position,
         sf::Vector2f(facingLeft ? -(1.0f * sizex) : 1.0f * sizex, 2.0f * sizey), angle);
     // 渲染天照动画（如果激活）
-        if (tianzhaoActive)
-        {
-            sf::Texture& tianzhaoTexture = tianzhaoAnimation.GetTexture();
-            float tzSizex = tianzhaoTexture.getSize().x / 40.0f;
-            float tzSizey = tianzhaoTexture.getSize().y / 80.0f;
-            renderer.Draw(tianzhaoTexture, tianzhaoPosition,
-                sf::Vector2f(facingLeft ? -(1.0f * tzSizex) : 1.0f * tzSizex, 2.0f * tzSizey));
-            
-        }
+    if (tianzhaoActive)
+    {
+        sf::Texture& tianzhaoTexture = tianzhaoAnimation.GetTexture();
+        float tzSizex = tianzhaoTexture.getSize().x / 40.0f;
+        float tzSizey = tianzhaoTexture.getSize().y / 80.0f;
+        renderer.Draw(tianzhaoTexture, tianzhaoPosition,
+            sf::Vector2f(facingLeft ? -(1.0f * tzSizex) : 1.0f * tzSizex, 2.0f * tzSizey));
+
+    }
 }
 
 void Sasuke::OnBeginContact(b2Fixture* self, b2Fixture* other)

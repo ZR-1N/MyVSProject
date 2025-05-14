@@ -38,13 +38,10 @@ int main()
                     (float)event.size.height / 2.0f);
                 window.setView(dv);
             }
-            else if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Escape)
-                paused = !paused;
         }
 
         Update(deltaTime);
         window.clear(sf::Color::Black);
-
         if (state == GameState::Menu)
         {
             // 仅菜单：播放菜单背景动画 + Press to Start

@@ -28,7 +28,8 @@ void Restart()
         delete obj;
     }
     objects.clear();
-    
+
+
 
     Physics::Init();
     sasuke = Sasuke();
@@ -99,7 +100,7 @@ void Update(float deltaTime)
     }
     else if (state == GameState::Playing)
     {
-        
+
         if (sasuke.isDead)
         {
             menu->Update(*windowPtr);
@@ -119,10 +120,10 @@ void Update(float deltaTime)
             object->Update(deltaTime);
         }
     }
-    
+
     if (state == GameState::GameOver)
     {
-        
+
         windowPtr->setView(windowPtr->getDefaultView());
         menu->Update(*windowPtr);
 
@@ -169,7 +170,7 @@ void RenderUI(Renderer& renderer)
         float x = sz.x * 0.5f - restart.getGlobalBounds().width * 0.5f;
         float y = sz.y * 0.5f - restart.getGlobalBounds().height * 0.5f;
         restart.setPosition(x, y);
-        
+
         renderer.target.draw(restart);
     }
 }
@@ -305,7 +306,7 @@ void Menu::Render(sf::RenderWindow& window, Camera& camera)
     window.setView(view);
     window.draw(backgroundSprite);
     window.draw(startButton);
-    if (state==GameState::GameOver)//仅在角色死亡时显示 "Restart"
+    if (state == GameState::GameOver)//仅在角色死亡时显示 "Restart"
     {
         window.draw(restartText);
     }

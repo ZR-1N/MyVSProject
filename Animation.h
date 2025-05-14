@@ -16,12 +16,11 @@ public:
     Animation(float length = 0.0f, std::vector<AnimFrame> frames = {});
     void Update(float deltaTime);
     sf::Texture& GetTexture();
-
-
-
-
-    void Reset() { time = 0.0f; currentFrame = 0; }
-
+    void Reset() 
+    { 
+        time = 0.0f; 
+        currentFrame = 0; 
+    }
 private:
     float time = 0.0f;
     float length;

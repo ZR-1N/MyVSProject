@@ -26,9 +26,10 @@ private:
 
 	float destroyTimer = 0.0f;      // 被击后计时
 	bool isDead = false;            // 是否已被击
-	bool isHit = false;            // 标记：处于受击状态
+	bool isHit = false;            // 是否处于受击状态
 	const float hitDuration = 0.5f; // 受击后持续时长
 
 	FixtureData fixtureData{};
 	b2Body* body{};
+	
 };

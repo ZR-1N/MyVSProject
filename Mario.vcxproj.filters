@@ -85,9 +85,6 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="block.png">
-      <Filter>Resource Files</Filter>
-    </Image>
     <Image Include="map.png">
       <Filter>Resource Files</Filter>
     </Image>

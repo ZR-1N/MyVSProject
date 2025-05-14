@@ -17,13 +17,13 @@ public:
     void UpdateBackgroundScale(sf::RenderWindow& window); // 动态调整背景图缩放
 
     bool ShouldStart() const { return shouldStart; }
-    std::vector<sf::Texture> backgroundFrames; // 动画帧
-    sf::Sprite backgroundSprite; // 背景图
+    std::vector<sf::Texture> backgroundFrames; 
+    sf::Sprite backgroundSprite;
     int currentFrame = 0; // 当前帧
     sf::Clock animationClock; // 动画计时器
     float frameDuration = 0.1f; // 每帧持续时间
 
-    sf::Font font; // 字体
+    sf::Font font; 
     sf::Text startButton; // 开始游戏按钮
     sf::Text restartText; // 角色死亡时的重启文本
     bool shouldStart = false; // 标记是否点击开始
